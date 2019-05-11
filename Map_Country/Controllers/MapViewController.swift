@@ -47,7 +47,6 @@ class MapViewController: UIViewController {
         let regionRadios =  sqrt(country.area ?? 10) * 2000
         let region = MKCoordinateRegion(center: locCountry.coordinate, latitudinalMeters: regionRadios, longitudinalMeters: regionRadios)
         mapView.setRegion(region, animated: true)
-        
     }
     
     private func setupLayout(){

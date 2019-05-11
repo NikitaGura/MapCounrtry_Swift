@@ -59,12 +59,12 @@ class CountriesViewController: UIViewController {
                 let networkProcessor = NetworkProcessor()
                 networkProcessor.getJsonAllCoutry(completion: {
                     [weak self] countryModels in
-                    DispatchQueue.main.async {
-                        self?.countries = countryModels
-                        self?.countriesCollectionView.reloadData()
-                    }
+                        DispatchQueue.main.async {
+                            self?.countries = countryModels
+                            self?.countriesCollectionView.reloadData()
+                        }
                     },
-                                                  getError: {self.checkRefreshConection()})
+                    getError: {self.checkRefreshConection()})
             }))
             present(alert, animated: true, completion: nil)
         }
@@ -141,7 +141,7 @@ extension CountriesViewController: UISearchBarDelegate {
             countriesCollectionView.reloadData()
         }else{
             isSearching = true
-            filteredCountries = countries.filter({$0.name.lowercased().prefix(searchText.count).elementsEqual(searchText.lowercased() )})
+            filteredCountries = countries.filter({$0.name.lowercased().prefix(searchText.count).elementsEqual(searchText.lowercased())})
             countriesCollectionView.reloadData()
         }
     }

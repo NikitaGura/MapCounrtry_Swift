@@ -20,7 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         networkProcessor.getJsonAllCoutry(completion: {
             [weak self] countryModels in
             DispatchQueue.main.async {
-                
                 self?.window?.rootViewController = CountriesViewController(countries: countryModels)
                 self?.window?.makeKeyAndVisible()
             }
